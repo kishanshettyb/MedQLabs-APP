@@ -264,32 +264,7 @@ export default class HomeScreen extends Component {
             </ScrollView>
           </View>
         </View>
-        <View style={styles.packagesContainer}>
-          <Text>
-            If you want to render a set of data broken into logical sections,
-            maybe with section headers (e.g. in an alphabetical address book),
-            and potentially with heterogeneous data and rendering (such as a
-            profile view with some buttons followed by a composer, then a photo
-            grid, then a friend grid, and finally a list of stories), this is
-            the way to go.
-          </Text>
-          <Text>
-            If you want to render a set of data broken into logical sections,
-            maybe with section headers (e.g. in an alphabetical address book),
-            and potentially with heterogeneous data and rendering (such as a
-            profile view with some buttons followed by a composer, then a photo
-            grid, then a friend grid, and finally a list of stories), this is
-            the way to go.
-          </Text>
-          <Text>
-            If you want to render a set of data broken into logical sections,
-            maybe with section headers (e.g. in an alphabetical address book),
-            and potentially with heterogeneous data and rendering (such as a
-            profile view with some buttons followed by a composer, then a photo
-            grid, then a friend grid, and finally a list of stories), this is
-            the way to go.
-          </Text>
-        </View>
+         
       </ScrollView>
     );
   }
