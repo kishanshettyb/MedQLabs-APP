@@ -99,8 +99,7 @@ const styles = StyleSheet.create({
     paddingBottom: 15
   },
   packagesContainer: {
-    margin: 10,
-    marginBottom: 20
+    margin: 10
   },
   cardImage: {
     borderBottomEndRadius: 0,
@@ -108,17 +107,70 @@ const styles = StyleSheet.create({
     height: 150,
     resizeMode: "contain"
   },
-  smallBtn:{
-    fontSize:12,
-    padding:5,
-    paddingLeft:10,
-    paddingRight:10,
+  smallBtn: {
+    fontSize: 12,
+    padding: 5,
+    paddingLeft: 10,
+    paddingRight: 10,
     backgroundColor: theme.COLORS.ERROR,
-    borderRadius:5,
-    elevation:1,
-    color:'#fff',marginTop:2
+    borderRadius: 5,
+    elevation: 1,
+    color: "#fff",
+    marginTop: 2
+  },
+  // offer
+  offerImageSrtip: {
+    width: 370,
+    height: 45,
+    alignItems: "contain",
+    borderRadius: 5,
+    justifyContent: "center",
+    alignItems: "center",
+    margin: 10
+  },
+  // category
+  catagoryCard: {
+    elevation: 2,
+    backgroundColor: "#fff",
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 0,
+    marginBottom:5,
+    marginRight:10,
+    marginLeft:0,
+    borderRadius: 5
+  },
+  categoryImage: {
+    width: 100,
+    height: 60,
+    resizeMode: "contain"
+  },
+  categoryText: {
+    color: theme.COLORS.PRIMARY,
+    paddingBottom: 5
+  },
+  // healthy tips
+  healthyTipCard: {
+    width: 200,
+    marginRight: 10,
+    marginBottom: 5
+  },
+  // test
+  testCard: {
+    width: 250,
+    height:200,
+    borderRadius: 5,
+    elevation: 2,
+    backgroundColor: theme.COLORS.NAVBAR,
+    marginRight: 10,
+    marginTop: 0,
+    marginBottom:5,
+    padding: 10, 
+  },
+  hrLight: {
+    borderBottomColor: "#ddd",
+    borderBottomWidth: 1
   }
-   
 });
 
 export { styles };

@@ -4,7 +4,8 @@ import {
   Text,
   View,
   TouchableOpacity,
-  Platform
+  Platform,
+  Image
 } from "react-native";
 
 import {
@@ -13,6 +14,12 @@ import {
   createDrawerNavigator,
   createBottomTabNavigator
 } from "react-navigation";
+
+import {
+  theme,
+  withGalio,
+  GalioProvider,
+} from "galio-framework";
 
 import AuthLoadingScreen from "./screens/AuthLoadingScreen";
 import SignInScreen from "./screens/SignInScreen";
@@ -35,10 +42,15 @@ const HomeStack = createStackNavigator({
     screen: HomeScreen,
     navigationOptions: ({ navigation }) => {
       return {
-        headerTitle: "Home",
+        headerTitle: (
+          <Image
+            style={{ width: 180, height: 50, alignSelf: "center" }}
+            source={require("./assets/logo.jpg")}
+          />
+        ),
         headerLeft: (
           <Icon
-            style={{ paddingLeft: 10 }}
+            style={styles.barIcon}
             onPress={() => navigation.openDrawer()}
             name="md-menu"
             size={30}
@@ -50,11 +62,13 @@ const HomeStack = createStackNavigator({
               type="ionicon"
               name={Platform.OS === "ios" ? "ios-search" : "md-search"}
               size={25}
+              style={styles.iconColor}
             />
             <Icon
               type="ionicon"
               name={Platform.OS === "ios" ? "ios-cart" : "md-cart"}
               size={25}
+              style={styles.iconColor}
             />
           </View>
         )
@@ -70,7 +84,7 @@ const PackagesStack = createStackNavigator({
         headerTitle: "Packages",
         headerLeft: (
           <Icon
-            style={{ paddingLeft: 10 }}
+            style={styles.barIcon}
             onPress={() => navigation.openDrawer()}
             name="md-menu"
             size={30}
@@ -82,11 +96,13 @@ const PackagesStack = createStackNavigator({
               type="ionicon"
               name={Platform.OS === "ios" ? "ios-search" : "md-search"}
               size={25}
+              style={styles.iconColor}
             />
             <Icon
               type="ionicon"
               name={Platform.OS === "ios" ? "ios-cart" : "md-cart"}
               size={25}
+              style={styles.iconColor}
             />
           </View>
         )
@@ -103,7 +119,7 @@ const AccountStack = createStackNavigator({
         headerTitle: "Account",
         headerLeft: (
           <Icon
-            style={{ paddingLeft: 10 }}
+            style={styles.barIcon}
             onPress={() => navigation.openDrawer()}
             name="md-menu"
             size={30}
@@ -115,11 +131,13 @@ const AccountStack = createStackNavigator({
               type="ionicon"
               name={Platform.OS === "ios" ? "ios-search" : "md-search"}
               size={25}
+              style={styles.iconColor}
             />
             <Icon
               type="ionicon"
               name={Platform.OS === "ios" ? "ios-cart" : "md-cart"}
               size={25}
+              style={styles.iconColor}
             />
           </View>
         )
@@ -187,7 +205,13 @@ const styles = StyleSheet.create({
   iconContainer: {
     flexDirection: "row",
     justifyContent: "space-evenly",
-    width: 120,
-   
+    width: 120
+  },
+  barIcon:{
+      paddingLeft: 10,
+      color: '#2d2d2d' 
+  },
+  iconColor:{
+    color: '#2d2d2d'
   }
 });
