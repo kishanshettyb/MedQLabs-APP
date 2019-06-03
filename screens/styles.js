@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
   },
   // healthy tips
   healthyTipCard: {
-    width: 200,
+    width: 300,
     marginRight: 10,
     marginBottom: 5
   },

@@ -76,10 +76,9 @@ export default class HomeScreen extends Component {
               fullBackgroundImage
               image="https://images.unsplash.com/photo-1536567893079-f54abdc73dc2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e6a56a131b11a6366446c42381192329&auto=format&fit=crop&w=1350&q=80"
               shadow={true}
-              title="kishan"
-              caption="kishan"
+              title="Health Package Name"
+              caption="Rs. 299/-"
               borderless={true}
-              location="Banglore"
               avatar={null}
               titleColor="#FE2472"
               footerStyle={styles.cardFooter}
@@ -214,13 +213,12 @@ export default class HomeScreen extends Component {
                   fullBackgroundImage
                   image="https://images.unsplash.com/photo-1536567893079-f54abdc73dc2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e6a56a131b11a6366446c42381192329&auto=format&fit=crop&w=1350&q=80"
                   shadow={true}
-                  title="kishan"
-                  caption="kishan"
+                  title="Healthy Tip Title"
+                  caption="caption"
                   borderless={true}
-                  avatar={null}
+                  avatar="https://images.unsplash.com/photo-1536567893079-f54abdc73dc2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e6a56a131b11a6366446c42381192329&auto=format&fit=crop&w=1350&q=80"
                   titleColor="#FE2472"
-                  footerStyle={styles.cardFooter}
-                  imageBlockStyle={styles.cardImage}
+                  location="Banglore"
                 />
               </View>
               <View style={styles.healthyTipCard}>
@@ -228,13 +226,12 @@ export default class HomeScreen extends Component {
                   fullBackgroundImage
                   image="https://images.unsplash.com/photo-1536567893079-f54abdc73dc2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e6a56a131b11a6366446c42381192329&auto=format&fit=crop&w=1350&q=80"
                   shadow={true}
-                  title="kishan"
-                  caption="kishan"
+                  title="Healthy Tip Title"
+                  caption="caption"
                   borderless={true}
-                  avatar={null}
+                  avatar="https://images.unsplash.com/photo-1536567893079-f54abdc73dc2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e6a56a131b11a6366446c42381192329&auto=format&fit=crop&w=1350&q=80"
                   titleColor="#FE2472"
-                  footerStyle={styles.cardFooter}
-                  imageBlockStyle={styles.cardImage}
+                  location="Banglore"
                 />
               </View>
 
@@ -243,13 +240,12 @@ export default class HomeScreen extends Component {
                   fullBackgroundImage
                   image="https://images.unsplash.com/photo-1536567893079-f54abdc73dc2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e6a56a131b11a6366446c42381192329&auto=format&fit=crop&w=1350&q=80"
                   shadow={true}
-                  title="kishan"
-                  caption="kishan"
+                  title="Healthy Tip Title"
+                  caption="caption"
                   borderless={true}
-                  avatar={null}
+                  avatar="https://images.unsplash.com/photo-1536567893079-f54abdc73dc2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e6a56a131b11a6366446c42381192329&auto=format&fit=crop&w=1350&q=80"
                   titleColor="#FE2472"
-                  footerStyle={styles.cardFooter}
-                  imageBlockStyle={styles.cardImage}
+                  location="Banglore"
                 />
               </View>
               <View style={styles.healthyTipCard}>
@@ -257,13 +253,12 @@ export default class HomeScreen extends Component {
                   fullBackgroundImage
                   image="https://images.unsplash.com/photo-1536567893079-f54abdc73dc2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e6a56a131b11a6366446c42381192329&auto=format&fit=crop&w=1350&q=80"
                   shadow={true}
-                  title="kishan"
-                  caption="kishan"
+                  title="Healthy Tip Title"
+                  caption="caption"
                   borderless={true}
-                  avatar={null}
+                  avatar="https://images.unsplash.com/photo-1536567893079-f54abdc73dc2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e6a56a131b11a6366446c42381192329&auto=format&fit=crop&w=1350&q=80"
                   titleColor="#FE2472"
-                  footerStyle={styles.cardFooter}
-                  imageBlockStyle={styles.cardImage}
+                  location="Banglore"
                 />
               </View>
             </ScrollView>
