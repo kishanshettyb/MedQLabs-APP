@@ -156,6 +156,7 @@ export default class HomeScreen extends Component {
       });
   }
 
+  
   render() {
     return (
       <ScrollView
@@ -297,7 +298,7 @@ export default class HomeScreen extends Component {
                 </Text>
               </View>
               <View style={{ right: 0, position: "absolute" }}>
-                <Text style={styles.smallBtn}>View All</Text>
+                <Text style={styles.smallBtn} onPress={() => this.props.navigation.navigate("PopularPackages")}>View All</Text>
               </View>
             </View>
             <MyScrollView>{this.state.viewsHolder}</MyScrollView>

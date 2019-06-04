@@ -29,6 +29,8 @@ import AccountScreen from "./screens/AccountScreen";
 import HomeScreen from "./screens/HomeScreen";
 import PackagesScreen from "./screens/PackagesScreen";
 import AddressScreen from "./screens/AddressScreen";
+import PopularPackagesScreen from "./screens/PopularPackagesScreen";
+
 
 
 import Icon from "react-native-vector-icons/Ionicons";
@@ -76,8 +78,39 @@ const HomeStack = createStackNavigator({
         )
       };
     }
+  },
+  PopularPackages:{
+    screen: PopularPackagesScreen,
+    navigationOptions: ({ navigation }) => {
+      return {
+        headerTitle: "Popular Packages",
+        headerLeft: (
+          <Icon
+            style={{ paddingLeft: 10 }}
+            onPress={() => navigation.openDrawer()}
+            name="md-menu"
+            size={30}
+          />
+        ),
+        headerRight: (
+          <View style={styles.iconContainer}>
+            <Icon
+              type="ionicon"
+              name={Platform.OS === "ios" ? "ios-search" : "md-search"}
+              size={25}
+            />
+            <Icon
+              type="ionicon"
+              name={Platform.OS === "ios" ? "ios-cart" : "md-cart"}
+              size={25}
+            />
+          </View>
+        )
+      };
+    }
   }
 });
+
 const PackagesStack = createStackNavigator({
   Packages: {
     screen: PackagesScreen,
