@@ -28,6 +28,8 @@ import WelcomeScreen from "./screens/WelcomeScreen";
 import AccountScreen from "./screens/AccountScreen";
 import HomeScreen from "./screens/HomeScreen";
 import PackagesScreen from "./screens/PackagesScreen";
+import AddressScreen from "./screens/AddressScreen";
+
 
 import Icon from "react-native-vector-icons/Ionicons";
 
@@ -143,7 +145,38 @@ const AccountStack = createStackNavigator({
         )
       };
     }
-  }
+  },
+  Address: {
+    screen: AddressScreen,
+    navigationOptions: ({ navigation }) => {
+      return {
+        headerTitle: "Address",
+        headerLeft: (
+          <Icon
+            style={{ paddingLeft: 10 }}
+            onPress={() => navigation.openDrawer()}
+            name="md-menu"
+            size={30}
+          />
+        ),
+        headerRight: (
+          <View style={styles.iconContainer}>
+            <Icon
+              type="ionicon"
+              name={Platform.OS === "ios" ? "ios-search" : "md-search"}
+              size={25}
+            />
+            <Icon
+              type="ionicon"
+              name={Platform.OS === "ios" ? "ios-cart" : "md-cart"}
+              size={25}
+            />
+          </View>
+        )
+      };
+    }
+  },
+  
 });
 
 const AppTabNavigator = createBottomTabNavigator(
