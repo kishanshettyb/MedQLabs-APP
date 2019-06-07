@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { styles } from "./styles";
 import Swiper from "react-native-swiper";
 
+
 import {
   View,
   Image,
@@ -25,46 +26,9 @@ import {
   Card
 } from "galio-framework";
 import Icon from "react-native-vector-icons/Ionicons";
+import MyScrollView from '../screens/MyScroolView';
 
 // var device_width = Dimensions.get("window").width-50;
-
-class MyScrollView extends Component {
-  constructor() {
-    super();
-    this.state = { currentHorizontalPage: 1 };
-  }
-
-  handleScroll = event => {
-    this.scrollX = event.nativeEvent.contentOffset.x;
-    this.setState({
-      currentHorizontalPage: Math.min(
-        Math.max(Math.floor(this.scrollX / device_width + 0.5) + 1, 0),
-        React.Children.count(this.props.children)
-      )
-    });
-  };
-
-  render() {
-    return (
-      <View style={styles.containerTransparent}>
-        <ScrollView
-          horizontal={true}
-          contentContainerStyle={styles.contentContainer}
-          showsHorizontalScrollIndicator={false}
-        >
-          {this.props.children}
-        </ScrollView>
-
-        <View style={styles.pagingContainer}>
-          <Text style={styles.text}>
-            {this.state.currentHorizontalPage} /{" "}
-            {React.Children.count(this.props.children)}
-          </Text>
-        </View>
-      </View>
-    );
-  }
-}
 
 export default class HomeScreen extends Component {
   constructor() {

@@ -1,6 +1,7 @@
 import { StyleSheet, Dimensions } from "react-native";
 import { theme, withGalio, GalioProvider } from "galio-framework";
 var device_width = Dimensions.get("window").width - 100;
+var full_device_width = Dimensions.get("window").width - 20;
 
 const styles = StyleSheet.create({
   container: {
@@ -26,11 +27,24 @@ const styles = StyleSheet.create({
   posRel: {
     position: "relative"
   },
+  elevation1: {
+    elevation: 5
+  },
   // paddings
   p10: { padding: 10 },
   //margins
-  mt5: { 
-    marginTop: 10 
+  m10: {
+    margin: 10
+  },
+  mr20: {
+    marginRight: 20
+  },
+  search: {
+    width: full_device_width
+  },
+  ml10: { marginLeft: 10 },
+  mt5: {
+    marginTop: 10
   },
   mtb5: {
     marginTop: 5,
@@ -107,12 +121,24 @@ const styles = StyleSheet.create({
     marginRight: 10,
     position: "relative"
   },
+  normalPackageCard: {
+    borderRadius: 5,
+    elevation: 1,
+    backgroundColor: "#fff",
+    height: 180,
+    width: device_width,
+    marginTop: 0,
+    marginBottom: 10,
+    marginRight: 10,
+    position: "relative"
+  },
   packageCardImage: {
     width: device_width,
     height: 110,
     borderTopLeftRadius: 5,
     borderTopRightRadius: 5
   },
+
   pagingContainer: {
     backgroundColor: "#ddd",
     display: "none"
@@ -216,6 +242,9 @@ const styles = StyleSheet.create({
     elevation: 1,
     color: "#fff",
     marginTop: 2
+  },
+  width100: {
+    width: 100
   },
   // offer
   offerImageSrtip: {
@@ -369,6 +398,36 @@ const styles = StyleSheet.create({
     padding: 10,
     fontSize: 18,
     height: 44
+  },
+  fullWidth: {
+    width: full_device_width
+  },
+  //Cart Screen
+  cartCard: {
+    borderRadius: 5,
+    elevation: 2,
+    height: 100,
+    margin: 10,
+    padding: 10
+  },
+  listItemContainer: {
+    borderRadius: 5,
+    backgroundColor: "#fff",
+    marginLeft: 10,
+    marginRight: 10,
+    marginBottom: 5,
+    marginTop: 5,
+    height: 110,
+    padding: 7,
+    elevation: 3
+  },
+  nextBtn:{
+    justifyContent: 'flex-end',
+    marginBottom: 0,
+    position:'absolute',
+  },
+  stepperBorder:{
+    borderWidth:1
   }
 });
 

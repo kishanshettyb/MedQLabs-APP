@@ -86,38 +86,7 @@ class AddressScreen extends Component {
               Edit
             </Button>
           </View>
-
-          <View />
-
-          <Input
-            rounded={true}
-            placeholderTextColor={theme.COLORS.PLACEHOLDER}
-            placeholder="Email"
-          />
-          <Input
-            rounded={true}
-            placeholderTextColor={theme.COLORS.PLACEHOLDER}
-            placeholder="Email"
-          />
-          <Input
-            rounded={true}
-            placeholderTextColor={theme.COLORS.PLACEHOLDER}
-            placeholder="Email"
-          />
-          <Input
-            rounded={true}
-            placeholderTextColor={theme.COLORS.PLACEHOLDER}
-            placeholder="Email"
-          />
         </View>
-        <View
-          style={{
-            flex: 1,
-            alignItems: "center",
-            justifyContent: "center",
-            marginTop: 10
-          }}
-        />
       </View>
     );
   }

@@ -15,11 +15,7 @@ import {
   createBottomTabNavigator
 } from "react-navigation";
 
-import {
-  theme,
-  withGalio,
-  GalioProvider,
-} from "galio-framework";
+import { theme, withGalio, GalioProvider } from "galio-framework";
 
 import AuthLoadingScreen from "./screens/AuthLoadingScreen";
 import SignInScreen from "./screens/SignInScreen";
@@ -30,10 +26,11 @@ import HomeScreen from "./screens/HomeScreen";
 import PackagesScreen from "./screens/PackagesScreen";
 import AddressScreen from "./screens/AddressScreen";
 import PopularPackagesScreen from "./screens/PopularPackagesScreen";
-
-
+import ReportsScreen from "./screens/ReportsScreen";
+import CartScreen from "./screens/CartScreen";
 
 import Icon from "react-native-vector-icons/Ionicons";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 const AuthStackNavigator = createStackNavigator({
   Welcome: WelcomeScreen,
@@ -68,30 +65,48 @@ const HomeStack = createStackNavigator({
               size={25}
               style={styles.iconColor}
             />
+            <TouchableOpacity>
+              <Icon
+                type="ionicon"
+                name={Platform.OS === "ios" ? "ios-cart" : "md-cart"}
+                size={25}
+                style={styles.iconColor}
+                onPress={() => navigation.navigate("Cart")}
+              />
+              <Text style={{color:'#fff',backgroundColor:theme.COLORS.ERROR,position:'absolute',borderRadius:50,right:-10,top:-5,fontSize:6,width:12,height:12,padding:2,textAlign:'center'}}>0</Text>
+            </TouchableOpacity>
+          </View>
+        )
+      };
+    }
+  },
+  PopularPackages: {
+    screen: PopularPackagesScreen,
+    navigationOptions: ({ navigation }) => {
+      return {
+        headerTitle: "Popular Packages",
+        headerRight: (
+          <View style={styles.iconContainer}>
+            <Icon
+              type="ionicon"
+              name={Platform.OS === "ios" ? "ios-search" : "md-search"}
+              size={25}
+            />
             <Icon
               type="ionicon"
               name={Platform.OS === "ios" ? "ios-cart" : "md-cart"}
               size={25}
-              style={styles.iconColor}
             />
           </View>
         )
       };
     }
   },
-  PopularPackages:{
-    screen: PopularPackagesScreen,
+  Cart: {
+    screen: CartScreen,
     navigationOptions: ({ navigation }) => {
       return {
-        headerTitle: "Popular Packages",
-        headerLeft: (
-          <Icon
-            style={{ paddingLeft: 10 }}
-            onPress={() => navigation.openDrawer()}
-            name="md-menu"
-            size={30}
-          />
-        ),
+        // headerTitle: "Cart Details",
         headerRight: (
           <View style={styles.iconContainer}>
             <Icon
@@ -152,6 +167,7 @@ const AccountStack = createStackNavigator({
     navigationOptions: ({ navigation }) => {
       return {
         headerTitle: "Account",
+
         headerLeft: (
           <Icon
             style={styles.barIcon}
@@ -184,14 +200,7 @@ const AccountStack = createStackNavigator({
     navigationOptions: ({ navigation }) => {
       return {
         headerTitle: "Address",
-        headerLeft: (
-          <Icon
-            style={{ paddingLeft: 10 }}
-            onPress={() => navigation.openDrawer()}
-            name="md-menu"
-            size={30}
-          />
-        ),
+
         headerRight: (
           <View style={styles.iconContainer}>
             <Icon
@@ -208,22 +217,87 @@ const AccountStack = createStackNavigator({
         )
       };
     }
-  },
-  
+  }
+});
+
+const ReportsStack = createStackNavigator({
+  Report: {
+    screen: ReportsScreen,
+    navigationOptions: ({ navigation }) => {
+      return {
+        headerTitle: "Reports",
+
+        headerLeft: (
+          <Icon
+            style={styles.barIcon}
+            onPress={() => navigation.openDrawer()}
+            name="md-menu"
+            size={30}
+          />
+        ),
+        headerRight: (
+          <View style={styles.iconContainer}>
+            <Icon
+              type="ionicon"
+              name={Platform.OS === "ios" ? "ios-search" : "md-search"}
+              size={25}
+              style={styles.iconColor}
+            />
+            <Icon
+              type="ionicon"
+              name={Platform.OS === "ios" ? "ios-cart" : "md-cart"}
+              size={25}
+              style={styles.iconColor}
+            />
+          </View>
+        )
+      };
+    }
+  }
 });
 
 const AppTabNavigator = createBottomTabNavigator(
   {
     HomeStack,
     PackagesStack,
+    ReportsStack,
     AccountStack
   },
   {
     navigationOptions: ({ navigation }) => {
       const { routeName } = navigation.state.routes[navigation.state.index];
+
+      let tabBarVisible = true;
+      if (navigation.state.index > 0) {
+        tabBarVisible = false;
+      }
+      let IconComponent = Ionicons;
+      let iconName;
+      if (routeName === "Home") {
+        iconName = `md-home`;
+        tabBarLabel = "Home";
+        // Sometimes we want to add badges to some icons.
+        // You can check the implementation below.
+        // IconComponent = HomeIconWithBadge;
+      } else if (routeName === "Packages") {
+        iconName = `md-briefcase`;
+        tabBarLabel = "Packages";
+      } else if (routeName === "Account") {
+        iconName = `md-person`;
+        tabBarLabel = "Account";
+      } else if (routeName === "Report") {
+        iconName = `md-document`;
+        tabBarLabel = "Reports";
+      }
       return {
         header: null,
-        headerTitle: routeName
+        headerTitle: routeName,
+        tabBarVisible,
+        showIcon: true,
+
+        tabBarIcon: ({ tintColor }) => (
+          <IconComponent name={iconName} size={25} color={tintColor} />
+        )
       };
     }
   }
@@ -235,6 +309,7 @@ const AppStackNavigator = createStackNavigator({
     navigationOptions: ({ navigation }) => {
       return {
         header: null
+
         // headerTitle: routeName
       };
       //   {
@@ -273,11 +348,11 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
     width: 120
   },
-  barIcon:{
-      paddingLeft: 10,
-      color: '#2d2d2d' 
+  barIcon: {
+    paddingLeft: 10,
+    color: "#2d2d2d"
   },
-  iconColor:{
-    color: '#2d2d2d'
+  iconColor: {
+    color: "#2d2d2d"
   }
 });
